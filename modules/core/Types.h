@@ -18,8 +18,20 @@ typedef boost::uint32_t uint32_t;
 typedef boost::int64_t int64_t;
 typedef boost::uint64_t uint64_t;
 typedef char char_t;
+
+
+// Windows
 #ifdef _WIN32
 #ifdef _WIN64
+typedef boost::int64_t word;
+typedef boost::uint64_t uword;
+#else
+typedef boost::int32_t word;
+typedef boost::uint32_t uword;
+#endif
+#else
+// Linux
+#if defined(__LP64__) || defined(_LP64)
 typedef boost::int64_t word;
 typedef boost::uint64_t uword;
 #else

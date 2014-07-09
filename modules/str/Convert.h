@@ -1,11 +1,9 @@
 #ifndef __STR_CONVERT_H__
 #define __STR_CONVERT_H__
 
-#define LIB_STR
-#include <addLibs.h>
-
 #include <string>
 #include <sstream>
+#include <limits>
 #include <core/Types.h>
 #include <except/Exception.h>
 
@@ -46,7 +44,7 @@ struct Convert
     template<typename T> static std::string toString(const T& value)
     {
         return str::Convert::toString<T>(
-                value, 
+                value,
                 str::Convert::getPrecision<T>(value));
     }
 
@@ -76,50 +74,12 @@ struct Convert
         return value;
     }
 
-    /*
-     *  \func toType
-     *  \brief Used to convert a string to a bool type.
-     *
-     *  \param s The string you want to convert.
-     *  \return The true or false value in the string.
-     *  \throw Exception if the string cannot be converted to this data type.
-     */
-    template<> static core::bool_t toType<core::bool_t> (
-            const std::string& s);
-
-    /*
-     *  \func toType
-     *  \brief Used to convert a string to a string. Internally this does
-     *         just returns the input. This is here for compiler reasons.
-     *
-     *  \param s The string you want to convert.
-     *  \return The same string you passed in.
-     */
-    template<> static std::string toType<std::string> (const std::string& s)
-    {
-        return s;
-    }
-
 private:
     template<typename T> static core::uword getPrecision(const T&)
     {
         return 0;
     }
-
-    template<> static core::uword getPrecision(const core::float_t&)
-    {
-        return std::numeric_limits<core::float_t>::digits10;
-    }
-
-    template<> static core::uword getPrecision(const core::double_t&)
-    {
-        return std::numeric_limits<core::double_t>::digits10;
-    }
-
-    template<> static core::uword getPrecision(const core::decimal_t&)
-    {
-        return std::numeric_limits<core::decimal_t>::digits10;
-    }
 };
 }
 #endif
+

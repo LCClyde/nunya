@@ -14,6 +14,13 @@ namespace logger
 class Logger
 {
 public:
+    enum
+    {
+        LOG_DEBUG,
+        LOG_INFO,
+        LOG_WARNING,
+        LOG_ERROR
+    };
     /*
      *  \func Constructor
      *  \brief Sets up the internal structure of the logger.

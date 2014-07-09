@@ -1,9 +1,6 @@
 #ifndef __LOGGER_LOG_H__
 #define __LOGGER_LOG_H__
 
-#define LIB_LOGGER
-#include <addLibs.h>
-
 #include <string>
 #include <core/Types.h>
 #include <logger/Logger.h>

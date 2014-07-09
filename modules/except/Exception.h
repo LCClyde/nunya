@@ -1,8 +1,6 @@
 #ifndef __EXCEPT_EXCEPTION_H__
 #define __EXCEPT_EXCEPTION_H__
 
-#define LIB_EXCEPT
-#include <addLibs.h>
 #include <string>
 
 namespace except
@@ -48,8 +46,6 @@ public:
     }
 
 private:
-    Exception& operator=(const Exception&) { }
-
     const std::string mMessage;
 };
 

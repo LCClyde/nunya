@@ -3,6 +3,8 @@
 
 #include <core/Types.h>
 
+namespace nyra
+{
 namespace logger
 {
 /*
@@ -16,5 +18,5 @@ static const core::uword LOG_FILE;
 static const core::uword LOG_CONSOLE_FILE;
 };
 }
-
+}
 #endif

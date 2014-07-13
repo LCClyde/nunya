@@ -3,6 +3,8 @@
 
 #include <boost/cstdint.hpp>
 
+namespace nyra
+{
 namespace core
 {
 typedef float float_t;
@@ -31,14 +33,11 @@ typedef boost::uint32_t uword;
 #endif
 #else
 // Linux
-#if defined(__LP64__) || defined(_LP64)
-typedef boost::int64_t word;
-typedef boost::uint64_t uword;
-#else
-typedef boost::int32_t word;
-typedef boost::uint32_t uword;
+#ifdef __linux__
+typedef size_t uword;
+typedef ssize_t word;
 #endif
 #endif
 }
-
+}
 #endif

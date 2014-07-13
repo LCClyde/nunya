@@ -1,19 +1,33 @@
 #include <except/Exception.h>
 
+namespace nyra
+{
 namespace except
 {
-Exception::Exception() :
-    mMessage("No additional information is available")
+Exception::Exception()
 {
 }
 
 Exception::Exception(const std::string& message) :
-    mMessage(message)
+    mContext(message)
 {
 }
 
 Exception::Exception(const Exception& other) :
-    mMessage(other.mMessage)
+    mContext(other.mContext)
 {
+}
+
+Exception::Exception(const Context& context) :
+    mContext(context)
+{
+}
+
+std::ostream& operator<<(std::ostream& os, const Exception& exception)
+{
+    os << exception.getFullMessage();
+    return os;
+}
+
 }
 }

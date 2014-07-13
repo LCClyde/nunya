@@ -13,9 +13,12 @@
  */
 #define REGISTER_CLASS(className, registerName) \
         const bool isRegistered##className = \
-        pattern::Factory<className>::FactoryManager:: \
+        nyra::pattern::Singleton< \
+        nyra::pattern::SelfRegisterFactory<className> >:: \
         getInstance().registerObject(new registerName());
 
+namespace nyra
+{
 namespace pattern
 {
 /*
@@ -91,5 +94,6 @@ public:
     virtual std::unique_ptr<entityT> operator()(
                 const FactoryOptions* options) const = 0;
 };
+}
 }
 #endif

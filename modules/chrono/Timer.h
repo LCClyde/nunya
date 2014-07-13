@@ -4,6 +4,8 @@
 #include <chrono>
 #include <core/Types.h>
 
+namespace nyra
+{
 namespace chrono
 {
 /*
@@ -27,5 +29,5 @@ private:
     std::chrono::duration<core::double_t> mDeltaTime;
 };
 }
-
+}
 #endif

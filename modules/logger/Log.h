@@ -6,6 +6,8 @@
 #include <logger/Logger.h>
 #include <logger/Constants.h>
 
+namespace nyra
+{
 namespace logger
 {
 /*
@@ -44,5 +46,5 @@ void logWarning(const std::string& message);
  */
 void logError(const std::string& message);
 }
-
+}
 #endif

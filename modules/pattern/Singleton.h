@@ -1,6 +1,8 @@
 #ifndef __PATTERN_SINGLETON_H__
 #define __PATTERN_SINGLETON_H__
 
+namespace nyra
+{
 namespace pattern
 {
 template <typename T>
@@ -19,5 +21,6 @@ private:
     Singleton& operator=(const Singleton&);
     ~Singleton();
 };
+}
 }
 #endif

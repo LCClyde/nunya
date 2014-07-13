@@ -7,6 +7,8 @@
 #include <core/Types.h>
 #include <except/Exception.h>
 
+namespace nyra
+{
 namespace str
 {
 /*
@@ -60,7 +62,8 @@ struct Convert
     template<typename T> static T toType(const std::string& s)
     {
         if (s.empty())
-            throw except::Exception("Trying to covert an empty string.");
+            throw except::Exception(
+                    CONTEXT("Trying to covert an empty string."));
 
         T value;
 
@@ -69,7 +72,8 @@ struct Convert
         buffer >> value;
 
         if (buffer.fail())
-            throw except::Exception("Failed to convert: " + s);
+            throw except::Exception(
+                    CONTEXT("Failed to convert: " + s));
 
         return value;
     }
@@ -80,6 +84,7 @@ private:
         return 0;
     }
 };
+}
 }
 #endif
 

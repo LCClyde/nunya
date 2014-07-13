@@ -3,6 +3,8 @@
 
 #include <string>
 
+namespace nyra
+{
 namespace str
 {
 /*
@@ -13,7 +15,7 @@ struct Utils
 {
     /*
      *  \func toUpper
-     *  \brief Coverts a string to an all uppercase string.
+     *  \brief Converts a string to an all uppercase string.
      *
      *  \param input The string to convert. This will destroy
      *               the original string.
@@ -22,7 +24,7 @@ struct Utils
 
     /*
      *  \func toUpper
-     *  \brief Coverts a string to an all uppercase string.
+     *  \brief Converts a string to an all uppercase string.
      *
      *  \param input The string to convert.
      *  \return The all uppercase string.
@@ -35,5 +37,5 @@ struct Utils
     }
 };
 }
-
+}
 #endif

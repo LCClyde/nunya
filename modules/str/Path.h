@@ -3,6 +3,8 @@
 
 #include <string>
 
+namespace nyra
+{
 namespace str
 {
 /*
@@ -13,7 +15,7 @@ struct Path
 {
     /*
      *  \func getBasename
-     *  \brief Gets the name of the file without extension. 
+     *  \brief Gets the name of the file without extension.
      *         Returns an empty string if a file does not exist.
      *         Example: C:/path1/path2/file.txt = file
      *
@@ -21,5 +23,6 @@ struct Path
      */
     static std::string getBasename(const std::string& pathname);
 };
+}
 }
 #endif

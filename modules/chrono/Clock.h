@@ -5,6 +5,8 @@
 #include <core/Types.h>
 #include <str/Convert.h>
 
+namespace nyra
+{
 namespace chrono
 {
 /*
@@ -64,7 +66,7 @@ public:
 
     /*
      *  \func getMinutes
-     *  \brief Gets the mintues position of the last updated time.
+     *  \brief Gets the minutes position of the last updated time.
      */
     inline core::uword getMinutes() const
     {
@@ -137,5 +139,6 @@ private:
     std::string mMonthString;
     std::string mDayString;
 };
+}
 }
 #endif

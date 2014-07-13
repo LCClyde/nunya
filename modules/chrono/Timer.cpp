@@ -1,5 +1,7 @@
 #include <chrono/Timer.h>
 
+namespace nyra
+{
 namespace chrono
 {
 Timer::Timer() :
@@ -15,5 +17,6 @@ core::double_t Timer::updateDeltaTime()
     mDeltaTime = now - mLastTime;
     mLastTime = now;
     return mDeltaTime.count();
+}
 }
 }

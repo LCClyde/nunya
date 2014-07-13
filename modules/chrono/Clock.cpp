@@ -1,6 +1,8 @@
 #include <chrono/Clock.h>
 #include <boost/date_time/posix_time/posix_time.hpp>
 
+namespace nyra
+{
 namespace chrono
 {
 Clock::Clock()
@@ -29,5 +31,6 @@ std::string Clock::getLeadingZeroNumber(core::uword value) const
     else if (value < 10)
         return "0" + str::Convert::toString(value);
     return str::Convert::toString(value);
+}
 }
 }

@@ -6,16 +6,19 @@
 
 namespace
 {
-static std::unique_ptr<logger::Logger> loggerInstance;
+static std::unique_ptr<nyra::logger::Logger> loggerInstance;
 }
 
+namespace nyra
+{
 namespace logger
 {
 void initialize(const std::string& outputPathname,
                 core::uword flags)
 {
     if (loggerInstance.get())
-        throw except::Exception("The global logger is being recreated.");
+        throw except::Exception(
+                CONTEXT("The global logger is being recreated."));
     loggerInstance.reset(new logger::Logger(flags, outputPathname));
 }
 
@@ -37,5 +40,6 @@ void logWarning(const std::string& message)
 void logError(const std::string& message)
 {
     logger::logInfo("ERROR: " + message);
+}
 }
 }

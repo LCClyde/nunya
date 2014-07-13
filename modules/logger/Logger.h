@@ -5,6 +5,8 @@
 #include <fstream>
 #include <core/Types.h>
 
+namespace nyra
+{
 namespace logger
 {
 /*
@@ -48,5 +50,6 @@ private:
     const core::uword mFlags;
     std::ofstream mFile;
 };
+}
 }
 #endif
